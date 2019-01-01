@@ -1,21 +1,27 @@
 # Insta_Downloader
-## A api-less instagram photos downloader that mimicks human interactions to avoid ban.
+## An instagram photo downloader that mimics human interactions to avoid ban.
 
+---
+This project aims to scrape all photos of an instagram profile,
+trying to emulate the normal interactions of a human using a regular browser.
+Please keep in mind that private scraping can potentially block your account, so use
+at your own risk. I recommend you get a fictitious account.
 
-
-This project as the aim to scrape all the photos from a instagram profile,
-trying to emulate the normal human-browser interactions.
-Please mind that the private scraping can potentialy block your account, so use
-it at your own risk. I recommend you to get a dummy account.
-
-## Public profiles:
-- You can minimaze the window, it will keep running on the background.
+### Public profiles:
+- You can minimize the window, the program will keep running on the background. 
 - Your credentials aren't necessary.
 
-## Private profiles:
-- While the login process is doing, keep the windown open. After that point
-you can close it.
+### Private profiles:
+- While the login process is doing, keep the window open. After that point you can close it.
 - Your credentials are necessary.
 
-## Requirements
+## Usage
 
+Just open the main script. There you will find options for both public and private profiles.
+
+## Requirements
+- **Selenium** : A python controlled browser, wich enables to render webpages the same way a normal browser does. With this we spoof our bot as a normal user, using a regular browser. It also is useful for dynamic pages, where you need to wait a few seconds until the page loads for example.
+- **Requests** : Used as a html fetching tool in this project, is necessary to extract the images after we adquire their url. This can be done using requests because by that time we aren't anymore on the instagram domain
+- **Time**: This package is used to stop the program for a few seconds, in order to wait the webpages to load completely and javascript execute in its entirety.
+- **Random**: With this package we are able to randomize a waiting time between key presses, wich mimicks the way a normal user writes.
+- **Bs4** : A useful tool for html parsing. It identifies the images on a profile and returns the url.
