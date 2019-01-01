@@ -28,7 +28,7 @@ def download(url,userlogin,passlogin):
 
     time.sleep(3)
     SCROLL_PAUSE_TIME = 1
-    z=[]
+    images_unique=[]
     # Get scroll height
     last_height = driver.execute_script("return document.body.scrollHeight")
 
@@ -46,24 +46,30 @@ def download(url,userlogin,passlogin):
             break
         last_height = new_height
         time.sleep(1)
-        y=str(driver.page_source)
-        html=bs(y,"html5lib")
-        x=html.findAll("img", {"class": "FFVAD"})
-        in_first = set(z)
-        in_second = set(x)
+        # Retrive the html
+        html_to_parse=str(driver.page_source)
+        html=bs(html_to_parse,"html5lib")
+        # Get the image's url
+        images_url=html.findAll("img", {"class": "FFVAD"})
+
+        # Check if they are unique
+        in_first = set(images_unique)
+        in_second = set(images_url)
 
         in_second_but_not_in_first = in_second - in_first
 
-        result = z + list(in_second_but_not_in_first)
-        z=result
+        result = images_unique + list(in_second_but_not_in_first)
+        images_unique=result
+    # Close the webdriver     
     driver.close()
 
 
-    name="image"
+    
     for i in range(len(z)):
         name="image"+str(i)+".jpg"
+        # Save each image.jpg file
         with open(name, 'wb') as handler:
-            #print(x[1].get("src"))
+            
             img_data = requests.get(z[i].get("src")).content
             handler.write(img_data)
     return
