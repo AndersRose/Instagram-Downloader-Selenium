@@ -12,7 +12,7 @@ def download(url,userlogin,passlogin):
     user=str(username)
     password=str(passlogin)
     driver = webdriver.Firefox()
-    driver.get()
+    driver.get("https://www.instagram.com/accounts/login")
     time.sleep(2)
     pg.press("tab",3,round(random(),2))
     time.sleep(round(random(),2))
@@ -59,10 +59,10 @@ def download(url,userlogin,passlogin):
     driver.close()
 
 
-    nome="image"
+    name="image"
     for i in range(len(z)):
-        nome="image"+str(i)+".jpg"
-        with open(nome, 'wb') as handler:
+        name="image"+str(i)+".jpg"
+        with open(name, 'wb') as handler:
             #print(x[1].get("src"))
             img_data = requests.get(z[i].get("src")).content
             handler.write(img_data)

@@ -43,10 +43,10 @@ def download(url):
     driver.close()
    
 
-    nome="imagem"
+    name="image"
     for i in range(len(z)):
-        nome="imagem"+str(i)+".jpg"
-        with open(nome, 'wb') as handler:
+        name="image"+str(i)+".jpg"
+        with open(name, 'wb') as handler:
             
             img_data = requests.get(z[i].get("src")).content
             handler.write(img_data)
