@@ -1,0 +1,6 @@
+selenium
+requests
+time
+random
+bs4
+pyautogui
