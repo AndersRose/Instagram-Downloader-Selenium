@@ -1,4 +1,4 @@
-# Instagram_Downloader_Selenium
+# Instagram Downloader using Selenium
 ## An instagram photo downloader that mimics human interactions to avoid ban.
 
 ---
