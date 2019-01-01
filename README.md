@@ -25,3 +25,24 @@ Just open the main script. There you will find options for both public and priva
 - **Time**: This package is used to stop the program for a few seconds, in order to wait the webpages to load completely and javascript execute in its entirety.
 - **Random**: With this package we are able to randomize a waiting time between key presses, wich mimicks the way a normal user writes.
 - **Bs4** : A useful tool for html parsing. It identifies the images on a profile and returns the url.
+### Installation
+On terminal:
+```
+pip install -r requirements.txt
+
+```
+## Possible issues
+You should change the chromedriver for the one you want. I'm using the firefox. 
+If you are having problems or want to change the browser, go to the function files and change this:
+
+```
+driver= webdriver.Firefox()
+```
+to:
+
+```
+driver= webdriver.Chrome()
+```
+This selects the chrome browser instead firefox.
+Visit their documentation:
+https://selenium-python.readthedocs.io/
